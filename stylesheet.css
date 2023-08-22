@@ -1,0 +1,164 @@
+/* while i don't mind you copying my site design, at least attribute */
+
+
+/* stripped down Unifont 13.0.04, Unifont-min-13.0.04 Licensed under GPL2 */
+@font-face {
+  font-family: "Unifont";
+  src:
+    url(https://utsuho.rocks/unifont-min-13.0.04.woff) format("woff"),
+    url(https://utsuho.rocks/unifont-min-13.0.04.ttf) format("truetype"),
+    local("Unifont");
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sazanami Gothic";
+  src: local("Sazanami Gothic"),
+  url(https://utsuho.rocks/sazanami-gothic-regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  --font: Unifont;
+  /* --font: Nunito; */
+  --fontsize: 16px;
+}
+
+body {
+  /* background-color: #5add8c; */
+  /* background: rgb(90, 221, 140); */
+  /* background: linear-gradient(0deg, rgb(50, 228, 154) 0%, rgba(90, 220, 221, 1) 100%); */
+  background-image: url("/img/gd.png");
+  background-repeat: repeat;
+  /* transform: rotate(180deg); */
+}
+
+footer {
+  display: block;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: 30px;
+}
+
+footer {
+  margin-top: 50px;
+  /*
+    background: linear-gradient(-45deg, #ffffff 32px, transparent 0), linear-gradient(45deg, #ffffff 32px, transparent 0);
+    border: 0;
+    */
+  background-position: left-bottom;
+  background-repeat: repeat-x;
+  background-size: 64px 64px;
+  content: " ";
+  display: contents;
+  /*
+    position: fixed;
+    */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+}
+
+h1 {
+  margin-top: 0px;
+  font-size: var(--fontsize);
+  font-weight: 400;
+  color: #000000;
+}
+
+h2 {
+  margin-top: 0px;
+  font-size: var(--fontsize);
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+p {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+pre {
+  font-family: var(--font), monospace, sans-serif;
+}
+
+a:hover img {
+  filter: drop-shadow(1px 1px 0px #FFFFFF) drop-shadow(-1px -1px 0px #FFFFFF)
+    drop-shadow(1px -1px 0px #FFFFFF) drop-shadow(-1px 1px 0px #FFFFFF);
+}
+
+.body {
+  position: relative;
+  text-align: center;
+  font-family: var(--font), sans-serif;
+  font-size: var(--fontsize);
+  margin-top: 10px;
+}
+
+.title {
+  font-size: var(--fontsize);
+}
+
+.bio {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.bottom {
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-align: center !important;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-family: var(--font), sans-serif;
+  text-align: center;
+  font-size: var(--font-size);
+  margin-bottom: auto;
+}
+
+.nav {
+  text-align: center;
+  font-family: var(--font), sans-serif;
+  font-size: var(--fontsize);
+}
+
+.spin:hover {
+  animation-name: spin;
+  animation-duration: 100ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
