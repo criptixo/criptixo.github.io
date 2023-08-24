@@ -1,7 +1,3 @@
-/* while i don't mind you copying my site design, at least attribute */
-
-
-/* stripped down Unifont 13.0.04, Unifont-min-13.0.04 Licensed under GPL2 */
 @font-face {
   font-family: "Unifont";
   src:
@@ -162,4 +158,3 @@ a:hover img {
       transform:rotate(360deg);
   }
 }
-<!-- made for elinks/lynx and styles were adde
