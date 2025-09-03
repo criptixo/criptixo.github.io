@@ -288,11 +288,8 @@ a:hover {
 }
 
 .recent-section {
-  border-top: 1px solid var(--secondary);
-  padding: var(--box-padding);
+  padding-top: var(--spacing-md);
   margin-top: var(--spacing-md);
-  background: var(--box-bg);
-  border-radius: var(--border-radius);
 }
 
 .recent-header {
