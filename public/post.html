@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Loading... | criptixo</title>
+  <meta name="description" content="Personal website of criptixo - terminal enthusiast and minimalist developer." />
+  <meta name="keywords" content="criptixo, terminal, cli, linux, programming, rust, python, ascii, art" />
+  <meta name="author" content="criptixo" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="criptixo" />
+  <meta property="og:description" content="Personal website of criptixo - terminal enthusiast and minimalist developer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://criptixo.me" />
+  
+  <!-- Twitter meta tags -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="criptixo" />
+  <meta name="twitter:description" content="Personal website of criptixo - terminal enthusiast and minimalist developer." />
+
+  <link rel="canonical" href="https://criptixo.me" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.png" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="brand" aria-label="Home">[ criptixo :: ~ ]</a>
+      <nav class="tabs" role="navigation" aria-label="Main navigation">
+        <a href="/"><span class="nav-icon">[~]</span>Home</a>
+        <a href="/projects.html"><span class="nav-icon">[>_]</span>Projects</a>
+        <a href="/blog.html"><span class="nav-icon">[#]</span>Blog</a>
+        <a href="/gallery.html"><span class="nav-icon">[+]</span>Gallery</a>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="box term">
+        <div class="title term-title" id="post-header">Loading...</div><hr class="titleline">
+        
+        <div class="post-content" id="post-content">
+          <div class="loading-text">Loading content...</div>
+        </div>
+        
+        <div class="post-nav">
+          <a href="javascript:history.back()" class="back-link">← Back</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-stats">
+          <div class="stat-item">
+            <span class="stat-label">visitors:</span>
+            <span class="stat-value" id="visCount">—</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:contact@criptixo.me">contact</a>
+          <a href="https://github.com/criptixo" target="_blank" rel="noopener">github</a>
+          <a href="https://last.fm/user/criptixo" target="_blank" rel="noopener">last.fm</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <span class="symbol">[</span> © <span id="year"></span> criptixo <span class="symbol">]</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/header.js"></script>
+  <script src="/client.js"></script>
+  <script>
+    // Get the current path and determine content type and slug
+    function getContentInfo() {
+      const path = window.location.pathname;
+      const segments = path.split('/');
+      
+      if (segments[1] === 'blog' && segments[2]) {
+        return { type: 'blog', slug: segments[2] };
+      } else if (segments[1] === 'gallery' && segments[2]) {
+        return { type: 'gallery', slug: segments[2] };
+      } else if (segments[1] === 'projects' && segments[2]) {
+        return { type: 'projects', slug: segments[2] };
+      }
+      
+      return null;
+    }
+    
+    // Load and display the content
+    async function loadContent() {
+      const contentInfo = getContentInfo();
+      
+      if (!contentInfo) {
+        document.getElementById('post-content').innerHTML = '<div class="error-text">Content not found.</div>';
+        return;
+      }
+      
+      try {
+        const response = await fetch(`/api/${contentInfo.type}/${contentInfo.slug}`);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        
+        const post = await response.json();
+        
+        // Update page title and meta
+        document.getElementById('page-title').textContent = `${post.title} | criptixo`;
+        document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt || post.title);
+        
+        // Update header
+        const headerText = contentInfo.type === 'blog' ? '$ cat ~/blog/' + contentInfo.slug + '.md' :
+                          contentInfo.type === 'gallery' ? '$ cat ~/gallery/' + contentInfo.slug + '.md' :
+                          '$ cat ~/projects/' + contentInfo.slug + '.md';
+        document.getElementById('post-header').textContent = headerText;
+        
+        // Display content
+        const contentHtml = `
+          <div class="post-meta">
+            <h1>${post.title}</h1>
+            <div class="meta-info">
+              <span class="date">${post.date}</span>
+              ${post.tags ? `<span class="tags">${post.tags}</span>` : ''}
+            </div>
+          </div>
+          <div class="post-body">
+            ${post.content}
+          </div>
+        `;
+        
+        document.getElementById('post-content').innerHTML = contentHtml;
+        
+        // Update navigation active state
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        const activeLink = document.querySelector(`nav a[href="/${contentInfo.type}.html"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+        
+      } catch (error) {
+        console.error('Error loading content:', error);
+        document.getElementById('post-content').innerHTML = '<div class="error-text">Error loading content.</div>';
+      }
+    }
+    
+    // Load content when page loads
+    document.addEventListener('DOMContentLoaded', loadContent);
+  </script>
+</body>
+</html>

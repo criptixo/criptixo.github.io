@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Cache files
+.cache/
+.temp/
+
+# Build outputs
+dist/
+build/
+
+# Backup files
+*.backup
+*.bak
+
+# Data files that might contain sensitive info
+data/visitors.json
+data/lastfm_cache.json

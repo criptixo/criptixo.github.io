@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>criptixo.me</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.png" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="brand" aria-label="Home">[ criptixo :: ~ ]</a>
+      <nav class="tabs" role="navigation" aria-label="Main navigation">
+        <a href="/" class="active"><span class="nav-icon">[~]</span>Home</a>
+        <a href="/projects.html"><span class="nav-icon">[>_]</span>Projects</a>
+        <a href="/blog.html"><span class="nav-icon">[#]</span>Blog</a>
+        <a href="/gallery.html"><span class="nav-icon">[+]</span>Gallery</a>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="box term">
+        <div class="title term-title">$ whoami</div>
+
+        <div class="profile-section">
+          <div class="profile-info">
+            <div class="status-indicator">
+
+              <span class="status-dot"></span>
+              <span id="current-status" class="blink">coding...</span>
+            </div>
+            <p class="intro">Hi, I'm <strong>criptixo</strong>. I like tiny tools, Linux internals, and clean terminals.</p>
+            <div class="quick-stats">
+              <div class="stat-item">
+                <span class="stat-icon">📍</span>
+                <span class="stat-text">Europe/Berlin</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-icon">🕒</span>
+                <span class="stat-text" id="local-time">00:00</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-icon">💻</span>
+                <span class="stat-text">commits today: <span id="commit-count">0</span></span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-icon">📚</span>
+                <span class="stat-text">currently reading: <span id="reading-now">Clean Code</span></span>
+              </div>
+            </div>
+            <div class="tech-stack">
+              <div class="stack-title">$ cat ~/skills.txt</div>
+              <div class="stack-items">
+                <span class="tech-item">rust</span>
+                <span class="tech-item">python</span>
+                <span class="tech-item">js</span>
+                <span class="tech-item">linux</span>
+                <span class="tech-item">vim</span>
+                <span class="tech-item">docker</span>
+              </div>
+            </div>
+            <div class="current-projects">
+              <div class="projects-title">$ ps aux | grep projects</div>
+              <div class="project-items">
+                <div class="project-item">
+                  <span class="project-name">tty-toys</span>
+                  <div class="project-progress">
+                    <div class="progress-bar" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="project-item">
+                  <span class="project-name">termviz</span>
+                  <div class="project-progress">
+                    <div class="progress-bar" style="width: 40%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box green">
+        <div class="title term-title">$ neofetch</div><hr class="titleline">
+        <div class="system-info">
+          <div class="system-stats">
+            <div class="stat-row">
+              <span class="stat-key">OS</span>
+              <span class="stat-value">Arch Linux x86_64</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-key">Shell</span>
+              <span class="stat-value">zsh 5.9</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-key">WM</span>
+              <span class="stat-value">dwm</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-key">Terminal</span>
+              <span class="stat-value">st</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-key">Editor</span>
+              <span class="stat-value">neovim</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-key">Uptime</span>
+              <span class="stat-value" id="uptimeValue">calculating...</span>
+            </div>
+          </div>
+          <div class="system-colors">
+            <div class="color-row">
+              <span class="color-block" style="background: #1a1b26"></span>
+              <span class="color-block" style="background: #f7768e"></span>
+              <span class="color-block" style="background: #9ece6a"></span>
+              <span class="color-block" style="background: #e0af68"></span>
+            </div>
+            <div class="color-row">
+              <span class="color-block" style="background: #7aa2f7"></span>
+              <span class="color-block" style="background: #bb9af7"></span>
+              <span class="color-block" style="background: #7dcfff"></span>
+              <span class="color-block" style="background: #c0caf5"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box mag">
+        <div class="title mag-title">$ contact</div><hr class="titleline">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-label">Email:</span>
+            <a href="mailto:you@example.com" id="copyEmail">email</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">PGP:</span>
+            <a href="#" onclick="copyText('ssh-rsa AAA...')">pgp</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Matrix:</span>
+            <a href="https://matrix.to/#/@criptixo:matrix.org" target="_blank" rel="noopener">@criptixo:matrix.org</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Telegram:</span>
+            <a href="https://t.me/yourhandle" target="_blank" rel="noopener">@criptixo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="box yellow">
+        <div class="title yellow-title">$ interests</div><hr class="titleline">
+        <div class="interests">
+          <div class="interest-group">
+            <span class="group-label">Code:</span>
+            <div class="interest-links">
+              <a href="https://github.com/yourprofile" target="_blank" rel="noopener">github</a>
+              <a href="https://gist.github.com/yourprofile" target="_blank" rel="noopener">gists</a>
+            </div>
+          </div>
+          <div class="interest-group">
+            <span class="group-label">Social:</span>
+            <div class="interest-links">
+              <a href="https://fosstodon.org/@you" target="_blank" rel="noopener">mastodon</a>
+              <a href="https://last.fm/user/criptixo" target="_blank" rel="noopener">last.fm</a>
+            </div>
+          </div>
+          <div class="interest-group">
+            <span class="group-label">Reading:</span>
+            <div class="interest-links">
+              <a href="https://goodreads.com/user/show/yourprofile" target="_blank" rel="noopener">goodreads</a>
+              <a href="https://arc.net/folder/yourprofile" target="_blank" rel="noopener">bookmarks</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box cyan">
+        <div class="title cyan-title">$ now-playing</div><hr class="titleline">
+        <div class="music-section loading" id="music-section">
+          <div class="nowplaying" id="nowplaying">
+            <div class="album-art-container">
+              <img src="" alt="album art" id="npArt" style="display: none;"/>
+              <div class="album-placeholder" id="album-placeholder">
+                <pre class="ascii-art">
+┌─────────────┐
+│  ♪ ♫ ♪ ♫  │
+│             │
+│   No Song   │
+│   Playing   │
+│             │
+│  ♫ ♪ ♫ ♪  │
+└─────────────┘
+                </pre>
+              </div>
+            </div>
+            <div class="track-info">
+              <div id="npTitle" class="track-title">Loading music data...</div>
+              <div id="npMeta" class="track-meta muted"></div>
+            </div>
+          </div>
+          <div class="recent-section">
+            <div class="recent-header">History</div>
+            <div id="recentList" class="recent-tracks">
+              <div class="loading-text">Loading history...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box purple">
+        <div class="title term-title">$ chat</div><hr class="titleline">
+        <div class="chatbox">
+          <div id="chatlog" class="chatlog"></div>
+          <div id="typing" class="typing-indicator"></div>
+          <div class="chat-input">
+            <input id="username" placeholder="name" maxlength="24" spellcheck="false" />
+            <div class="message-wrapper">
+              <textarea id="message" placeholder="message" maxlength="500" rows="1"></textarea>
+              <button id="send" class="send-button">send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-stats">
+          <div class="stat-item">
+            <span class="stat-label">visitors:</span>
+            <span class="stat-value" id="visCount">—</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://ko-fi.com/criptixo" target="_blank" rel="noopener" class="kofi-link">[+] buy me a beer</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <span class="symbol">[</span> © <span id="year"></span> criptixo <span class="symbol">]</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/header.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
