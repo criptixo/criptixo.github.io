@@ -1,27 +1,17 @@
-{
-  "name": "criptixo-me",
-  "main": "worker.js",
-  "compatibility_date": "2024-09-02",
-  "compatibility_flags": ["nodejs_compat"],
-  "vars": {
-    "ENVIRONMENT": "production"
-  },
-  "kv_namespaces": [
-    {
-      "binding": "VISITOR_COUNT",
-      "id": "",
-      "preview_id": ""
-    },
-    {
-      "binding": "MESSAGES",
-      "id": "",
-      "preview_id": ""
-    }
-  ],
-  "routes": [
-    {
-      "pattern": "criptixo.me/*",
-      "zone_name": "criptixo.me"
-    }
-  ]
-}
+name = "criptixo-me"
+main = "worker.js"
+compatibility_date = "2024-09-02"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+
+[[kv_namespaces]]
+binding = "VISITOR_COUNT"
+id = ""
+preview_id = ""
+
+[[kv_namespaces]]
+binding = "MESSAGES"
+id = ""
+preview_id = ""
