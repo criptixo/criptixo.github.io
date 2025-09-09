@@ -284,13 +284,18 @@ a:hover {
   color: var(--secondary);
 }
 
-/* Music Section - Mobile-optimized */
+/* Music Section - Mobile-optimized with Last.fm integration */
 .music-section {
   position: relative;
 }
 
 .music-section.loading {
   opacity: 0.6;
+}
+
+.music-section.now-playing {
+  background: rgba(0, 212, 255, 0.05);
+  border-color: var(--primary);
 }
 
 .nowplaying {
@@ -401,6 +406,45 @@ a:hover {
   color: var(--highlight);
   font-size: 0.7em;
   opacity: 0.6;
+}
+
+.status-playing {
+  color: var(--highlight);
+  animation: pulse 2s infinite;
+}
+
+.status-recent {
+  color: var(--secondary);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+#current-track {
+  color: var(--primary);
+  font-weight: bold;
+  margin-bottom: var(--spacing-xs);
+}
+
+#current-artist {
+  color: var(--fg);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-xs);
+}
+
+#current-album {
+  color: var(--secondary);
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+#music-status {
+  color: var(--highlight);
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
 }
 
 .loading-text {

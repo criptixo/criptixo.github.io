@@ -98,13 +98,14 @@
         <div class="music-section">
           <div class="nowplaying">
             <div class="album-art-container">
+              <img id="npArt" alt="Album art" style="display: none;" />
               <div class="album-placeholder">
                 <pre class="ascii-art">
 ┌─────────────┐
 │  ♪ ♫ ♪ ♫  │
 │             │
-│   Music     │
-│   Lover     │
+│   Loading   │
+│   Music...  │
 │             │
 │  ♫ ♪ ♫ ♪  │
 └─────────────┘
@@ -112,17 +113,26 @@
               </div>
             </div>
             <div class="track-info">
-              <div class="track-title">Check out my music taste</div>
-              <div class="track-meta muted">→ <a href="https://last.fm/user/criptixo" target="_blank" rel="noopener">last.fm/user/criptixo</a></div>
-            </div>
-          </div>
-          <div class="recent-section">
-            <div class="recent-tracks">
-              <div class="track-note">
-                <p>I listen to a variety of genres from electronic to indie rock.</p>
-                <p>Check my Last.fm profile for real-time listening activity!</p>
+              <div class="track-title">
+                <span id="music-status">♪ loading...</span>
+              </div>
+              <div class="track-meta">
+                <div id="current-track">Loading track info...</div>
+                <div id="current-artist">Loading artist...</div>
+                <div id="current-album"></div>
               </div>
             </div>
+          </div>
+          
+          <div class="recent-section">
+            <div class="recent-header">Recent tracks:</div>
+            <div class="recent-tracks" id="recent-tracks">
+              <div class="loading-text">Loading recent tracks...</div>
+            </div>
+          </div>
+          
+          <div class="track-note">
+            <p>→ <a href="https://last.fm/user/criptixo" target="_blank" rel="noopener">view full history on last.fm</a></p>
           </div>
         </div>
       </div>
@@ -174,5 +184,8 @@
       </div>
     </footer>
   </div>
+
+  <!-- Last.fm Widget -->
+  <script src="lastfm-widget.js"></script>
 </body>
 </html>
