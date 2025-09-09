@@ -1,23 +1,22 @@
 # criptixo.me
 
-A minimal, neon-styled personal website built with Node.js and Express. Features a terminal-inspired design with real-time chat, Last.fm integration, and markdown-based content management.
+A minimal, neon-styled personal website built for GitHub Pages. Features a terminal-inspired design with Last.fm integration and a clean, organized file structure.
 
 ## Features
 
 - **Minimal Design**: Clean, terminal-inspired interface with modern neon color palette
-- **Real-time Chat**: Socket.IO powered live messaging system
-- **Last.fm Integration**: Display currently playing music with album art
-- **Markdown Content**: Dynamic blog, projects, and gallery content from markdown files
-- **Responsive Layout**: Works on desktop and mobile devices
-- **Visitor Counter**: Track site visitors with IP-based identification
+- **Last.fm Integration**: Real-time display of currently playing music with album art
+- **Mobile-First**: Responsive design optimized for all devices
+- **Static Hosting**: Pure HTML/CSS/JS compatible with GitHub Pages
+- **Organized Structure**: Professional file organization following web standards
+- **SEO Optimized**: Proper meta tags, robots.txt, and semantic HTML
 
 ## Tech Stack
 
-- **Backend**: Node.js, Express.js
-- **Real-time**: Socket.IO
-- **Content**: Markdown processing with gray-matter and marked
-- **Frontend**: Vanilla JavaScript, CSS custom properties
-- **APIs**: Last.fm API integration
+- **Frontend**: Pure HTML5, CSS3, Vanilla JavaScript
+- **Hosting**: GitHub Pages with automatic deployment
+- **APIs**: Last.fm API for music integration
+- **Build**: GitHub Actions for automated deployment
 
 ## Installation
 
