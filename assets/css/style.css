@@ -220,22 +220,28 @@ a:hover {
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  color: var(--fg);
+}
+
+.footer-content .symbol {
+  color: var(--primary);
+  font-weight: bold;
 }
 
 .kofi-link {
-  color: var(--warning);
+  color: var(--accent);
   text-decoration: none;
   transition: all var(--transition-smooth);
   font-weight: bold;
 }
 
 .kofi-link:hover {
-  color: var(--accent);
-  text-shadow: var(--glow-subtle) var(--accent);
+  color: var(--warning);
+  text-shadow: var(--glow-subtle) var(--warning);
 }
 
 /* Music Section - Mobile-optimized with Last.fm integration */
@@ -314,6 +320,13 @@ a:hover {
   color: var(--fg);
   opacity: 0.8;
   font-size: 0.9em;
+}
+
+.track-timestamp {
+  color: var(--secondary);
+  font-size: 0.8em;
+  opacity: 0.7;
+  margin-top: var(--spacing-xs);
 }
 
 .recent-section {

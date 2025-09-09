@@ -63,6 +63,7 @@ class LastFmWidget {
       track: document.getElementById('current-track'),
       artist: document.getElementById('current-artist'),
       album: document.getElementById('current-album'),
+      timestamp: document.getElementById('current-timestamp'),
       albumArt: document.getElementById('npArt'),
       placeholder: document.querySelector('.album-placeholder')
     };
@@ -89,6 +90,19 @@ class LastFmWidget {
       const albumName = track.album?.['#text'] || '';
       elements.album.textContent = albumName ? `from "${albumName}"` : '';
       elements.album.title = albumName;
+    }
+
+    // Update timestamp
+    if (elements.timestamp) {
+      if (isPlaying) {
+        elements.timestamp.textContent = 'playing now';
+        elements.timestamp.title = 'Currently playing';
+      } else {
+        const playedTime = this.formatPlayTime(track.date);
+        const fullTimestamp = this.formatFullTimestamp(track.date);
+        elements.timestamp.textContent = playedTime;
+        elements.timestamp.title = `Last played: ${fullTimestamp}`;
+      }
     }
 
     // Handle album art
@@ -138,13 +152,14 @@ class LastFmWidget {
       const artistName = track.artist?.name || track.artist?.['#text'] || 'Unknown Artist';
       const trackName = track.name || 'Unknown Track';
       const playedTime = this.formatPlayTime(track.date);
+      const fullTimestamp = this.formatFullTimestamp(track.date);
       
       return `
         <div class="row">
           <div class="meta">
             <div class="n" title="${trackName}">${trackName}</div>
             <div class="m" title="${artistName}">${artistName}</div>
-            <div class="t" title="Played ${playedTime}">${playedTime}</div>
+            <div class="t" title="${fullTimestamp}">${playedTime}</div>
           </div>
         </div>
       `;
@@ -169,6 +184,13 @@ class LastFmWidget {
     if (diffDays < 7) return `${diffDays}d ago`;
     
     return playedTime.toLocaleDateString();
+  }
+
+  formatFullTimestamp(dateObj) {
+    if (!dateObj || !dateObj.uts) return 'Unknown time';
+    
+    const playedTime = new Date(parseInt(dateObj.uts) * 1000);
+    return playedTime.toLocaleString(); // Full date and time
   }
 
   showNoMusic() {
