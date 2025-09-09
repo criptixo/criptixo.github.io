@@ -1,50 +1,3 @@
-/* Links section styling - Mobile-optimized */
-.links-section {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.link-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.group-label {
-  color: var(--secondary);
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-.link-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  margin-left: var(--spacing-lg);
-}
-
-.link-items a {
-  color: var(--fg);
-  text-decoration: none;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border: 1px solid var(--secondary);
-  border-radius: var(--border-radius);
-  transition: var(--transition-smooth);
-  font-size: 0.85rem;
-  min-height: 44px; /* Touch-friendly */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  touch-action: manipulation;
-}
-
-.link-items a:hover {
-  background: var(--secondary);
-  color: var(--bg);
-  box-shadow: var(--glow-subtle) var(--secondary);
-}
-
 /* Track note styling */
 .track-note {
   padding: var(--spacing-md);
@@ -73,11 +26,6 @@
   /* Semantic colors - coherent palette */
   --primary: var(--neon-cyan);
   --secondary: var(--neon-purple);
-  --accent: var(--neon-pink);
-  --highlight: var(--neon-green);
-  --warning: var(--neon-orange);
-  --info: var(--neon-blue);
-  --link: var(--neon-cyan);
   --accent: var(--neon-pink);
   --highlight: var(--neon-green);
   --warning: var(--neon-orange);
@@ -276,12 +224,6 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-}
-
-.footer-stats {
-  display: flex;
-  gap: 1rem;
-  color: var(--secondary);
 }
 
 /* Music Section - Mobile-optimized with Last.fm integration */
@@ -829,11 +771,6 @@ a:hover {
     gap: var(--spacing-sm);
   }
 
-  .footer-stats {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
   .recent-tracks .row {
     flex-direction: column;
     text-align: center;
@@ -862,17 +799,6 @@ a:hover {
   .send-button {
     align-self: flex-end;
     padding: var(--spacing-sm) var(--spacing-lg);
-  }
-
-  .link-items {
-    margin-left: 0;
-    justify-content: center;
-  }
-
-  .link-items a {
-    flex: 1;
-    text-align: center;
-    min-width: calc(50% - var(--spacing-xs));
   }
 }
 
@@ -921,10 +847,6 @@ a:hover {
   .footer-content {
     flex-direction: row;
   }
-
-  .link-items a {
-    min-width: auto;
-  }
 }
 
 /* Large screens */
@@ -940,10 +862,6 @@ a:hover {
   }
 
   .tabs a:hover {
-    transform: translateY(-1px);
-  }
-
-  .link-items a:hover {
     transform: translateY(-1px);
   }
 }
@@ -1008,7 +926,7 @@ a:hover {
 
 /* Touch device optimizations */
 @media (pointer: coarse) {
-  .tabs a, .link-items a, .send-button {
+  .tabs a, .send-button {
     min-height: 44px;
     padding: var(--spacing-sm) var(--spacing-md);
   }
