@@ -1,5 +1,0 @@
-# robots.txt for criptixo.me
-User-agent: *
-Allow: /
-Disallow: /api/
-Sitemap: https://criptixo.me/sitemap.xml
