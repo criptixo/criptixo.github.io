@@ -1,4 +1,4 @@
-/* Links section styling */
+/* Links section styling - Mobile-optimized */
 .links-section {
   display: flex;
   flex-direction: column;
@@ -32,6 +32,11 @@
   border-radius: var(--border-radius);
   transition: var(--transition-smooth);
   font-size: 0.85rem;
+  min-height: 44px; /* Touch-friendly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
 }
 
 .link-items a:hover {
@@ -104,12 +109,13 @@
   --container-padding: var(--spacing-md);
 }
 
-/* Base styles */
+/* Base styles - Mobile-first approach */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: var(--bg);
   color: var(--fg);
@@ -117,14 +123,17 @@ body {
   line-height: 1.5;
   font-size: 15px;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%; /* Prevent iOS font size changes */
+  -ms-text-size-adjust: 100%; /* Prevent Windows Phone font size changes */
 }
 
-/* Layout */
+/* Layout - Mobile-first responsive */
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: var(--container-padding);
   position: relative;
+  width: 100%; /* Ensure full width on mobile */
 }
 
 .container::before {
@@ -157,12 +166,13 @@ header {
   color: var(--accent);
 }
 
-/* Navigation - clean minimal styling */
+/* Navigation - Mobile-first responsive design */
 .tabs {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin: 1rem 0;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .tabs a {
@@ -174,6 +184,11 @@ header {
   position: relative;
   border-radius: var(--border-radius);
   background: var(--box-bg);
+  min-height: 44px; /* Touch-friendly minimum height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation; /* Improve touch responsiveness */
 }
 
 .tabs a:hover {
@@ -269,7 +284,7 @@ a:hover {
   color: var(--secondary);
 }
 
-/* Music Section - minimal design */
+/* Music Section - Mobile-optimized */
 .music-section {
   position: relative;
 }
@@ -287,6 +302,7 @@ a:hover {
   background: var(--box-bg);
   border: var(--box-border);
   border-radius: var(--border-radius);
+  flex-wrap: wrap; /* Allow wrapping on very small screens */
 }
 
 #npArt {
@@ -630,4 +646,297 @@ a:hover {
 
 .error-text {
   color: var(--warning);
+}
+
+/* Mobile-First Responsive Design */
+/* Base styles are mobile-first (min-width approach) */
+
+/* Mobile optimizations for very small screens */
+@media screen and (max-width: 320px) {
+  :root {
+    --spacing-xs: 0.2rem;
+    --spacing-sm: 0.4rem;
+    --spacing-md: 0.8rem;
+    --spacing-lg: 1.2rem;
+    --spacing-xl: 1.6rem;
+    --container-padding: 0.75rem;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .brand {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tabs a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .nav-icon {
+    display: none;
+  }
+}
+
+/* Standard mobile devices (phones) */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tabs a {
+    flex: 1;
+    min-width: calc(50% - 0.25rem);
+    text-align: center;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .nowplaying {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  #npArt, .album-placeholder, .album-art-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  .track-info {
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .recent-tracks .row {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-xs);
+  }
+
+  .recent-tracks .row img {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
+
+  .chatbox {
+    height: 250px;
+  }
+
+  .chatlog {
+    max-height: 150px;
+    font-size: 0.9rem;
+  }
+
+  .message-wrapper {
+    flex-direction: column;
+  }
+
+  .send-button {
+    align-self: flex-end;
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
+  .link-items {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .link-items a {
+    flex: 1;
+    text-align: center;
+    min-width: calc(50% - var(--spacing-xs));
+  }
+}
+
+/* Large mobile devices and small tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .tabs {
+    gap: 0.75rem;
+  }
+
+  .tabs a {
+    padding: 0.7rem 1rem;
+  }
+
+  .nowplaying {
+    gap: var(--spacing-md);
+  }
+
+  .footer-content {
+    gap: var(--spacing-md);
+  }
+
+  .recent-tracks .row {
+    align-items: center;
+  }
+
+  .link-items a {
+    min-width: calc(33.333% - var(--spacing-xs));
+  }
+}
+
+/* Tablets and small desktops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 750px;
+    padding: var(--spacing-lg);
+  }
+
+  .tabs {
+    gap: 1rem;
+  }
+
+  .nowplaying {
+    flex-direction: row;
+  }
+
+  .footer-content {
+    flex-direction: row;
+  }
+
+  .link-items a {
+    min-width: auto;
+  }
+}
+
+/* Large screens */
+@media screen and (min-width: 1025px) {
+  .container {
+    max-width: var(--container-width);
+  }
+
+  /* Enhance hover effects for larger screens */
+  .brand:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--glow-subtle) var(--primary);
+  }
+
+  .tabs a:hover {
+    transform: translateY(-1px);
+  }
+
+  .link-items a:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* High DPI displays */
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Accessibility: Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support (already dark by default) */
+@media (prefers-color-scheme: light) {
+  /* Users can opt into light mode if needed */
+  /* Currently optimized for dark theme */
+}
+
+/* Landscape mobile orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .container {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  header {
+    margin-bottom: var(--spacing-md);
+    padding: 0.5rem 0;
+  }
+
+  .brand {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .tabs {
+    margin: 0.5rem 0;
+  }
+
+  .box {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+  }
+
+  .chatbox {
+    height: 200px;
+  }
+
+  .chatlog {
+    max-height: 120px;
+  }
+}
+
+/* Touch device optimizations */
+@media (pointer: coarse) {
+  .tabs a, .link-items a, .send-button {
+    min-height: 44px;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .tabs a {
+    touch-action: manipulation;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    color: #000 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .tabs, .chatbox, .send-button {
+    display: none;
+  }
+
+  .box {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
 }
