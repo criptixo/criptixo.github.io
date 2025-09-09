@@ -209,7 +209,7 @@ a:hover {
   margin-right: 0.5rem;
 }
 
-/* Footer - line separator like header */
+/* Footer - simple one-line design */
 .site-footer {
   margin-top: var(--spacing-xl);
   padding: 1rem 0;
@@ -224,6 +224,18 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.kofi-link {
+  color: var(--warning);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  font-weight: bold;
+}
+
+.kofi-link:hover {
+  color: var(--accent);
+  text-shadow: var(--glow-subtle) var(--accent);
 }
 
 /* Music Section - Mobile-optimized with Last.fm integration */
