@@ -199,6 +199,25 @@ a:hover {
   color: var(--accent);
 }
 
+/* Links Section */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.link-label {
+  color: var(--secondary);
+  min-width: 60px;
+  font-weight: bold;
+}
+
 /* Status Elements - minimal design */
 .status-dot {
   display: inline-block;
