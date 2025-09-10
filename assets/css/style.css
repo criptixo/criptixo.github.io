@@ -199,7 +199,30 @@ a:hover {
   color: var(--accent);
 }
 
-/* Links Section */
+/* Content Sections - Unified styling for all boxes */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.content-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.content-label {
+  color: var(--secondary);
+  min-width: 80px;
+  font-weight: bold;
+}
+
+.content-text {
+  color: var(--fg);
+}
+
+/* Legacy support for links section (can be removed after update) */
 .links {
   display: flex;
   flex-direction: column;
