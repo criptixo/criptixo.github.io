@@ -726,6 +726,26 @@ a:hover {
   margin: var(--spacing-sm) 0;
 }
 
+.post-image {
+  margin: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.post-image img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.image-caption {
+  margin: var(--spacing-sm) 0 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 .post-nav {
   padding: var(--spacing-lg);
   border-top: 1px solid var(--secondary);
