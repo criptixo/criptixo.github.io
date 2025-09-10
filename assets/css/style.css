@@ -1204,6 +1204,30 @@ a:hover {
   font-size: 0.9rem;
 }
 
+.post-preview {
+  margin: var(--spacing-md) 0;
+}
+
+.preview-link {
+  display: block;
+  text-decoration: none;
+}
+
+.preview-image {
+  width: 100%;
+  max-width: 300px;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid var(--secondary);
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.preview-link:hover .preview-image {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 .post-excerpt {
   color: var(--fg);
   line-height: 1.6;
