@@ -262,10 +262,15 @@ a:hover {
 
 .footer-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   color: var(--fg);
+}
+
+.footer-left {
+  flex: 1;
+  text-align: left;
 }
 
 .kofi-link {
@@ -452,6 +457,17 @@ a:hover {
   font-weight: bold;
   font-size: 0.9em;
   text-transform: uppercase;
+}
+
+#lastfm-widget .music-header {
+  color: var(--accent);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+#lastfm-widget .music-info {
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .loading-text {
@@ -1239,6 +1255,20 @@ a:hover {
   border: 1px solid var(--secondary);
   border-radius: var(--border-radius);
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  display: block;
+}
+
+/* Mobile-specific improvements for blog thumbnails */
+@media (max-width: 768px) {
+  .preview-image {
+    max-width: 100%;
+    height: 120px;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .preview-link {
+    text-align: center;
+  }
 }
 
 .preview-link:hover .preview-image {

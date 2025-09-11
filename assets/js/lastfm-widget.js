@@ -263,15 +263,60 @@ class LastFmWidget {
 }
 
 // Initialize widget when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  const widget = new LastFmWidget();
-  widget.start();
-  
-  // Stop the widget when the page is unloaded
-  window.addEventListener('beforeunload', () => {
-    widget.stop();
-  });
-});
-
-// Expose widget globally for manual control if needed
+document.addEventListener('DOMContentLoaded', function() {
+    const widgetDiv = document.getElementById('lastfm-widget');
+    const username = 'cripto';
+    const apiKey = '78fa09b01e901bb5b655fe8e3fe23b56';
+    
+    async function fetchLastFmData() {
+        try {
+            // First try to get currently playing
+            const nowPlayingUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
+            const nowPlayingResponse = await fetch(nowPlayingUrl);
+            const nowPlayingData = await nowPlayingResponse.json();
+            
+            if (nowPlayingData.recenttracks && nowPlayingData.recenttracks.track) {
+                const track = Array.isArray(nowPlayingData.recenttracks.track) 
+                    ? nowPlayingData.recenttracks.track[0] 
+                    : nowPlayingData.recenttracks.track;
+                
+                const artist = track.artist['#text'] || track.artist.name || 'Unknown';
+                const song = track.name || 'Unknown';
+                
+                // Check if currently playing or get timestamp
+                const isNowPlaying = track['@attr'] && track['@attr'].nowplaying;
+                let timeInfo = '';
+                
+                if (isNowPlaying) {
+                    timeInfo = 'now playing';
+                } else if (track.date) {
+                    const timestamp = new Date(track.date.uts * 1000);
+                    timeInfo = `${timestamp.toLocaleDateString()} ${timestamp.toLocaleTimeString()}`;
+                } else {
+                    timeInfo = 'recently played';
+                }
+                
+                widgetDiv.innerHTML = `
+                    <div class="music-header">♪ currently listening</div>
+                    <div class="music-info">
+                        <strong>${song}</strong><br>
+                        by ${artist}<br>
+                        <small>${timeInfo}</small>
+                    </div>
+                `;
+            } else {
+                widgetDiv.innerHTML = '<div class="music-header">♪ not currently listening</div>';
+            }
+        } catch (error) {
+            console.error('Error fetching Last.fm data:', error);
+            widgetDiv.innerHTML = '<div class="music-header">♪ music widget error</div>';
+        }
+    }
+    
+    // Initial load
+    fetchLastFmData();
+    
+    // Update every 30 seconds
+    setInterval(fetchLastFmData, 30000);
+});// Expose widget globally for manual control if needed
 window.LastFmWidget = LastFmWidget;
