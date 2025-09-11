@@ -830,17 +830,30 @@ a:hover {
     padding: var(--spacing-sm);
   }
 
+  header {
+    padding: 0.5rem 0;
+  }
+
+  .brand {
+    margin: 0.5rem 0;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
   .tabs {
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-wrap: nowrap;
+    gap: 0.25rem;
+    overflow-x: auto;
+    margin: 0.5rem 0;
   }
 
   .tabs a {
     flex: 1;
-    min-width: calc(50% - 0.25rem);
+    min-width: auto;
     text-align: center;
-    padding: 0.6rem 0.5rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 0.4rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
   }
 
   .nowplaying {
