@@ -1,0 +1,22 @@
+{
+  "name": "criptixo.me",
+  "short_name": "criptixo",
+  "description": "Welcome to criptixo's digital corner. Linux enthusiast, terminal tools developer, and minimalist computing advocate.",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#0a0a0a",
+  "theme_color": "#39ff14",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["technology", "developer", "blog"],
+  "lang": "en-US",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}

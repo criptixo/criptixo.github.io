@@ -2,22 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://criptixo.me/</loc>
-    <lastmod>2025-09-10</lastmod>
+    <lastmod>2025-09-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://criptixo.me/blog/</loc>
-    <lastmod>2025-09-10</lastmod>
+    <lastmod>2025-09-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://criptixo.me/gallery/</loc>
-    <lastmod>2025-09-10</lastmod>
+    <lastmod>2025-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://criptixo.me/blog/posts/gentoo-linux-desktop-setup.html</loc>
+    <lastmod>2025-09-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://criptixo.me/blog/posts/overclocking-i7-4770k.html</loc>
-    <lastmod>2025-09-10</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

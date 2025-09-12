@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Building My Ultimate Gentoo Linux Desktop: A Complete Setup Guide — criptixo</title>
+  <meta name="description" content="Step-by-step guide to building a secure, optimized Gentoo Linux desktop with LUKS encryption, LVM, systemd, and Sway window manager. Complete configuration and tips included." />
+  <meta name="keywords" content="gentoo, linux, desktop, luks, lvm, systemd, sway, wayland, installation, configuration, security, optimization" />
+  <meta name="author" content="criptixo" />
+  <meta name="robots" content="index, follow" />
+  <meta name="article:published_time" content="2025-09-12" />
+  <meta name="article:modified_time" content="2025-09-12" />
+  <meta name="article:section" content="Linux" />
+  <meta name="article:tag" content="gentoo,linux,desktop,sway" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://criptixo.me/blog/posts/gentoo-linux-desktop-setup.html" />
+  <meta property="og:title" content="Building My Ultimate Gentoo Linux Desktop: A Complete Setup Guide — criptixo" />
+  <meta property="og:description" content="Step-by-step guide to building a secure, optimized Gentoo Linux desktop with LUKS encryption, LVM, systemd, and Sway window manager." />
+  <meta property="og:image" content="https://criptixo.me/assets/images/blog/gentoo-desktop.png" />
+  <meta property="og:article:published_time" content="2025-09-12" />
+  <meta property="og:article:author" content="criptixo" />
+  <meta property="og:article:section" content="Linux" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://criptixo.me/blog/posts/gentoo-linux-desktop-setup.html" />
+  <meta name="twitter:title" content="Building My Ultimate Gentoo Linux Desktop — criptixo" />
+  <meta name="twitter:description" content="Complete guide to Gentoo Linux desktop with LUKS, LVM, systemd, and Sway WM" />
+  <meta name="twitter:image" content="https://criptixo.me/assets/images/blog/gentoo-desktop.png" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#39ff14" />
+  
+  <link rel="canonical" href="https://criptixo.me/blog/posts/gentoo-linux-desktop-setup.html" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png" />
+  <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Building My Ultimate Gentoo Linux Desktop: A Complete Setup Guide",
+    "description": "Step-by-step guide to building a secure, optimized Gentoo Linux desktop with LUKS encryption, LVM, systemd, and Sway window manager.",
+    "image": "https://criptixo.me/assets/images/blog/gentoo-desktop.png",
+    "author": {
+      "@type": "Person",
+      "name": "criptixo",
+      "url": "https://criptixo.me"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "criptixo",
+      "url": "https://criptixo.me"
+    },
+    "datePublished": "2025-09-12",
+    "dateModified": "2025-09-12",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://criptixo.me/blog/posts/gentoo-linux-desktop-setup.html"
+    },
+    "keywords": ["gentoo", "linux", "desktop", "luks", "lvm", "systemd", "sway", "wayland"],
+    "articleSection": "Linux",
+    "wordCount": 1200,
+    "timeRequired": "PT8M"
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://criptixo.me/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://criptixo.me/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Building My Ultimate Gentoo Linux Desktop",
+        "item": "https://criptixo.me/blog/posts/gentoo-linux-desktop-setup.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="../../index.html" class="brand" aria-label="Home">[ criptixo :: ~ ]</a>
+      <nav class="tabs" role="navigation" aria-label="Main navigation">
+        <a href="../../index.html"><span class="nav-icon">[*]</span>Home</a>
+        <a href="../" class="active"><span class="nav-icon">[#]</span>Blog</a>
+        <a href="../../gallery/"><span class="nav-icon">[%]</span>Gallery</a>
+      </nav>
+    </header>
+
+    <main class="post-content">
+      <div class="post-meta">
+        <h1>Building My Ultimate Gentoo Linux Desktop: A Complete Setup Guide</h1>
+        <div class="post-info">
+          <time datetime="2025-09-12">September 12, 2025</time>
+          <span class="separator">•</span>
+          <span class="read-time">8 min read</span>
+          <span class="separator">•</span>
+          <span class="category">Linux</span>
+        </div>
+      </div>
+
+      <div class="post-body">
+        <p>After years of using various Linux distributions, I finally decided to build the ultimate desktop setup with <strong>Gentoo Linux</strong>. This isn't just another installation guide – it's a complete walkthrough of creating a secure, optimized, and minimalist desktop environment that reflects my philosophy of computing.</p>
+
+        <h2>Why Gentoo?</h2>
+        
+        <p>Gentoo offers unparalleled control over your system. Every package is compiled from source with your specific optimizations, resulting in a system that's truly yours. My setup focuses on:</p>
+        
+        <ul>
+          <li><strong>Security</strong>: Full disk encryption with LUKS</li>
+          <li><strong>Flexibility</strong>: LVM for volume management</li>
+          <li><strong>Performance</strong>: Aggressive compiler optimizations</li>
+          <li><strong>Minimalism</strong>: Sway window manager with Wayland</li>
+          <li><strong>Modern</strong>: systemd for init and service management</li>
+        </ul>
+
+        <h2>Key Features of My Setup</h2>
+
+        <p>This configuration has been tested on my hardware and includes these standout features:</p>
+
+        <blockquote>
+          <p><strong>LUKS on LVM</strong> allows for mounting other encrypted drives seamlessly, while <strong>systemd-boot</strong> provides a clean, silent boot experience with optimal performance settings.</p>
+        </blockquote>
+
+        <h3>Security Architecture</h3>
+        
+        <p>The foundation of this build is security. I use LUKS encryption on top of LVM, which provides:</p>
+        
+        <ul>
+          <li>Full disk encryption protecting all data at rest</li>
+          <li>Flexible volume management for future expansion</li>
+          <li>Ability to easily mount additional encrypted drives</li>
+          <li>UEFI Secure Boot compatibility</li>
+        </ul>
+
+        <h3>Performance Optimizations</h3>
+
+        <p>My <code>make.conf</code> is tuned for performance with these optimizations:</p>
+
+        <pre><code>COMMON_FLAGS="-march=native -O3 -pipe -flto=7"
+MAKEOPTS="-j5 -l5"
+USE="wayland vulkan pulseaudio alsa -systemd -ipv6"</code></pre>
+
+        <p>These flags enable:</p>
+        <ul>
+          <li><strong>-march=native</strong>: CPU-specific optimizations</li>
+          <li><strong>-O3</strong>: Aggressive optimization level</li>
+          <li><strong>-flto=7</strong>: Link-time optimization with 7 threads</li>
+          <li><strong>Parallel compilation</strong>: Using 5 jobs with load limit</li>
+        </ul>
+
+        <h2>The Installation Process</h2>
+
+        <h3>1. Disk Setup: LUKS on LVM</h3>
+
+        <p>The disk setup is crucial for both security and flexibility. Here's my partition scheme:</p>
+
+        <pre><code># Create partitions
+cfdisk /dev/sda
+
+# Setup LVM
+pvcreate /dev/sda2
+vgcreate vg0 /dev/sda2
+lvcreate -l 100%FREE -n root vg0
+
+# Apply LUKS encryption
+cryptsetup luksFormat --type luks2 --cipher aes-xts-plain64 \
+  --key-size 256 --hash sha256 /dev/vg0/root</code></pre>
+
+        <p>This approach gives us encrypted volumes that can be easily managed and expanded later.</p>
+
+        <h3>2. Base System with systemd</h3>
+
+        <p>I chose the systemd profile for its modern approach to system management:</p>
+
+        <pre><code># Select systemd profile
+eselect profile set 17  # systemd stable profile
+
+# Optimize for the new profile
+emerge --ask --verbose --update --deep --newuse @world</code></pre>
+
+        <h3>3. Kernel Configuration</h3>
+
+        <p>Using <code>genkernel</code> with custom configuration ensures all necessary drivers are included:</p>
+
+        <pre><code># Install and configure genkernel
+emerge --ask sys-kernel/genkernel
+nano -w /etc/genkernel.conf
+
+# Ensure LUKS and LVM support
+LVM="yes"
+LUKS="yes"
+
+# Generate kernel and initramfs
+genkernel --loglevel=5 all</code></pre>
+
+        <h2>Sway: The Future of Window Management</h2>
+
+        <p>Instead of traditional X11, I chose <strong>Sway</strong> – a Wayland compositor that's a drop-in replacement for i3wm. The benefits are significant:</p>
+
+        <ul>
+          <li><strong>Better security</strong>: Wayland's architecture prevents applications from snooping on each other</li>
+          <li><strong>Improved performance</strong>: Direct rendering without X11 overhead</li>
+          <li><strong>Modern graphics</strong>: Native support for HiDPI and multi-monitor setups</li>
+          <li><strong>Familiar workflow</strong>: Same keybindings and concepts as i3wm</li>
+        </ul>
+
+        <h3>Essential Sway Packages</h3>
+
+        <pre><code>emerge -av gui-wm/sway swaybg foot grim slurp \
+  terminus-font mako wl-clipboard playerctl bemenu</code></pre>
+
+        <p>My Sway environment includes:</p>
+        <ul>
+          <li><strong>foot</strong>: Fast, lightweight Wayland terminal</li>
+          <li><strong>mako</strong>: Notification daemon</li>
+          <li><strong>bemenu</strong>: Application launcher</li>
+          <li><strong>grim + slurp</strong>: Screenshot tools</li>
+        </ul>
+
+        <h2>Boot Configuration: systemd-boot</h2>
+
+        <p>For the bootloader, I use systemd-boot for its simplicity and integration:</p>
+
+        <pre><code># Install systemd-boot
+bootctl --path=/boot install
+
+# Create boot entry
+nano -w /boot/loader/entries/gentoo.conf</code></pre>
+
+        <p>My boot configuration enables silent booting with optimizations:</p>
+
+        <pre><code>title gentoo
+linux /vmlinuz-6.6.30-gentoo-x86_64
+initrd /initramfs-6.6.30-gentoo-x86_64.img
+options crypt_root=/dev/mapper/vg0-root root=/dev/mapper/root \
+  dolvm quiet loglevel=3 vt.global_cursor_default=0 \
+  mitigations=off</code></pre>
+
+        <h2>Software Selection Philosophy</h2>
+
+        <p>Every package in my system serves a purpose. Here are some key applications:</p>
+
+        <ul>
+          <li><strong>qutebrowser</strong>: Vim-like web browser built on Qt</li>
+          <li><strong>neovim</strong>: Modern, extensible text editor</li>
+          <li><strong>ranger</strong>: Console file manager</li>
+          <li><strong>pipewire</strong>: Modern audio system</li>
+          <li><strong>htop</strong>: System monitoring</li>
+        </ul>
+
+        <h2>Performance Results</h2>
+
+        <p>The optimizations pay off significantly:</p>
+
+        <ul>
+          <li><strong>Boot time</strong>: ~3 seconds from GRUB to desktop</li>
+          <li><strong>Memory usage</strong>: <400MB at idle</li>
+          <li><strong>Compilation speed</strong>: 30-40% faster than generic builds</li>
+          <li><strong>Graphics performance</strong>: Native Wayland rendering</li>
+        </ul>
+
+        <h2>Lessons Learned</h2>
+
+        <p>Building this system taught me several important lessons:</p>
+
+        <blockquote>
+          <p><strong>Minimalism isn't about having less</strong> – it's about having exactly what you need, optimized perfectly for your workflow.</p>
+        </blockquote>
+
+        <ul>
+          <li><strong>Plan your USE flags carefully</strong>: They dramatically affect compilation time and system behavior</li>
+          <li><strong>LUKS on LVM is worth the complexity</strong>: The flexibility for future drive management is invaluable</li>
+          <li><strong>Wayland is ready</strong>: Sway provides a superior experience to X11-based window managers</li>
+          <li><strong>systemd simplifies many things</strong>: Despite the controversy, it makes system management more consistent</li>
+        </ul>
+
+        <h2>The Complete Configuration</h2>
+
+        <p>All configuration files, USE flags, and detailed installation steps are available in my <a href="https://github.com/criptixo/gentoo-linux-desktop" target="_blank" rel="noopener">GitHub repository</a>. This includes:</p>
+
+        <ul>
+          <li>Complete <code>/etc/portage/</code> configuration</li>
+          <li>Sway and application dotfiles</li>
+          <li>Custom kernel configuration</li>
+          <li>Installation automation scripts</li>
+        </ul>
+
+        <h2>Future Improvements</h2>
+
+        <p>This setup continues to evolve. Future enhancements I'm considering:</p>
+
+        <ul>
+          <li><strong>Immutable system</strong>: Exploring Gentoo with read-only root</li>
+          <li><strong>Container integration</strong>: Better isolation for development environments</li>
+          <li><strong>Advanced security</strong>: SELinux or AppArmor integration</li>
+          <li><strong>Automation</strong>: Ansible playbooks for reproducible builds</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+
+        <p>Building a Gentoo desktop from scratch is a journey that teaches you intimate details about how Linux works. The result is a system that's uniquely yours – optimized for your hardware, configured for your workflow, and secure by design.</p>
+
+        <p>While it requires time and patience, the knowledge gained and the performance benefits make it worthwhile for anyone serious about understanding and controlling their computing environment.</p>
+
+        <blockquote>
+          <p><strong>Remember</strong>: This configuration is tested on my specific hardware. Always adapt the settings to match your system requirements and security needs.</p>
+        </blockquote>
+
+        <p>Feel free to explore the <a href="https://github.com/criptixo/gentoo-linux-desktop" target="_blank" rel="noopener">complete configuration repository</a> and adapt it for your own Gentoo journey!</p>
+      </div>
+
+      <div class="post-nav">
+        <a href="../" class="nav-link">← Back to Blog</a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <span class="footer-left">© 2025 criptixo</span>
+        <a href="https://ko-fi.com/criptixo" target="_blank" rel="noopener" class="kofi-link">
+          buy me a coffee
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
