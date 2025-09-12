@@ -1,56 +1,63 @@
 /* ═══════════════════════════════════════════════════════════════════════════════════ */
-/* █▀█ █▀█ █▀▀ █▄█   █▀ █▀█ █ █ █▀█ █▀▀ █▀▀   █ █ ▄▀█ █▀▀ █▄▀ █▀▀ █▀█   █▀█ █▀█ █▀█ ▀█▀ █▀▀ █▀█ █   █ █▀█ */
-/* █▄█ █▀▀ █▄▄ █▀█   ▄█ █▄█ █▄█ █▀▄ █▄▄ █▄▄   █▀█ █▀█ █▄▄ █▀▄ █▄▄ █▀▄   █▀▀ █▄█ █▀▄ ▀█▀ █▀  █▄█ █▄▄ █ █▄█ */
+/* █▀▀ █▀▀ █▀█ █▀▀ █ ▀█▀ █ █▀▀ █▀   █▀▄▀█ █ █▄█ █ █▀▄▀█ ▄▀█ █   █▀   █▀█ █▀█ █▀█ ▀█▀ █▀▀ █▀█ █   █ █▀█ */
+/* █▄█ █▄▄ █▄█ █▄▄ █ ▀█▀ █ █▄▄ ▄█   █▀▀▀█ █ █▀█ █ █▀▀▀█ █▀█ █▄▄ ▄█   █▀▀ █▄█ █▀▄ ▀█▀ █▀  █▄█ █▄▄ █ █▄█ */
 /* ═══════════════════════════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Source+Code+Pro:wght@300;400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap');
+/* Basic web fonts - no fancy imports needed for Geocities style */
 
 :root {
-  /* ─── Core System Colors ─── */
-  --bg-main: #0c0c0c;              /* Terminal black */
-  --bg-secondary: #1a1a1a;         /* Code editor dark */
-  --bg-tertiary: #242424;          /* Panel background */
-  --bg-highlight: #2d2d2d;         /* Hover states */
+  /* ─── Custom Color Palette ─── */
+  --black: #000000;                /* Pure black */
+  --purple: #9929EA;               /* Bright purple */
+  --pink: #CC66DA;                 /* Light purple/pink */
+  --yellow: #FAEB92;               /* Pale yellow */
   
-  --text-main: #e0e0e0;            /* Primary text */
-  --text-secondary: #b0b0b0;       /* Secondary text */
-  --text-muted: #707070;           /* Comments/muted */
+  /* ─── Background Colors ─── */
+  --bg-main: var(--black);         /* Black background */
+  --bg-secondary: var(--black);    /* Black secondary */
+  --bg-tertiary: var(--black);     /* Black tertiary */
+  --bg-highlight: var(--yellow);   /* Yellow for highlights */
   
-  /* ─── Hacker Terminal Palette ─── */
-  --green: #00ff41;                /* Matrix green */
-  --green-dark: #00cc33;           /* Darker green */
-  --blue: #00aaff;                 /* System blue */
-  --cyan: #00ffff;                 /* Bright cyan */
-  --orange: #ff8700;               /* Warning orange */
-  --red: #ff0040;                  /* Error red */
-  --yellow: #ffff00;               /* Alert yellow */
-  --purple: #9966cc;               /* Function purple */
-  --white: #ffffff;                /* Pure white */
+  /* ─── Text Colors ─── */
+  --text-main: var(--purple);      /* Purple text on black */
+  --text-secondary: var(--pink);   /* Pink accent text */
+  --text-muted: var(--pink);       /* Pink muted text */
+  
+  /* ─── Accent Colors ─── */
+  --green: var(--purple);          /* Purple accent */
+  --green-dark: var(--pink);       /* Pink as darker accent */
+  --blue: var(--purple);           /* Purple as primary accent */
+  --cyan: var(--pink);             /* Pink accent */
+  --orange: var(--yellow);         /* Yellow for highlights */
+  --red: var(--purple);            /* Purple accent */
+  --white: var(--yellow);          /* Yellow as highlight */
   
   /* ─── Semantic Colors ─── */
-  --accent-primary: var(--green);
-  --accent-secondary: var(--blue);
-  --accent-warning: var(--orange);
-  --accent-error: var(--red);
+  --accent-primary: var(--purple);
+  --accent-secondary: var(--pink);
+  --accent-warning: var(--yellow);
+  --accent-error: var(--purple);
   
-  /* ─── Terminal Aesthetics ─── */
-  --border-1: 1px solid #333333;
-  --border-2: 2px solid var(--green);
-  --border-dotted: 1px dotted var(--green-dark);
+  /* ─── Simple Borders ─── */
+  --border-1: 1px solid var(--purple);
+  --border-2: 2px solid var(--pink);
+  --border-dotted: 1px dotted var(--pink);
   
-  /* ─── Layout & Spacing ─── */
-  --container-width: 900px;
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
+  /* ─── Layout & Spacing - Minimal ─── */
+  --container-width: 100%;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
+  --spacing-lg: 1.25rem;
+  --spacing-xl: 1.5rem;
   
-  /* ─── Effects ─── */
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.7);
-  --glow-green: 0 0 10px var(--green);
-  --glow-blue: 0 0 10px var(--blue);
-  --transition: all 0.2s ease;
+  /* ─── Effects - REMOVED for minimal Geocities aesthetic ─── */
+  --shadow-soft: none;
+  --glow-green: none;
+  --glow-blue: none;
+  --glow-pink: none;
+  --glow-cyan: none;
+  --transition: none;
 }
 
 /* Track note styling */
@@ -59,7 +66,7 @@
   background: var(--bg-tertiary);
   border: var(--border-1);
   border-left: 3px solid var(--green);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .track-note p {
@@ -67,7 +74,7 @@
   color: var(--text-secondary);
 }
 
-/* ─── Base Styles - Hacker Terminal Aesthetic ─── */
+/* ─── Base Styles - Geocities Minimal ─── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -77,164 +84,117 @@
 body {
   background: var(--bg-main);
   color: var(--text-main);
-  font-family: 'JetBrains Mono', 'Source Code Pro', 'Ubuntu Mono', monospace;
-  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
   line-height: 1.4;
-  overflow-x: hidden;
-  position: relative;
+  overflow-x: auto;
+  position: static;
+  padding: var(--spacing-sm);
+  margin: 0;
 }
 
 /* ─── Matrix-style grid background ─── */
 body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(90deg, transparent 98%, var(--green) 100%),
-    linear-gradient(0deg, transparent 98%, var(--green) 100%);
-  background-size: 20px 20px;
-  opacity: 0.05;
-  z-index: -1;
-  pointer-events: none;
+  /* Remove terminal grid background for Geocities minimal */
+  display: none;
 }
 
-/* ─── Container - Classic boxy layout ─── */
+/* ─── Container - Mobile-first minimal layout ─── */
 .container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: var(--spacing-lg);
-  position: relative;
+  max-width: 100%;
+  margin: 0;
+  padding: var(--spacing-sm);
+  position: static;
   width: 100%;
 }
 
-/* ─── Header - 2010 Portfolio Style ─── */
+/* ─── Header - Minimal mobile-friendly ─── */
 header {
-  margin-bottom: var(--spacing-lg); /* Reduced from xl */
+  margin-bottom: var(--spacing-md);
   text-align: center;
   position: relative;
-  padding: var(--spacing-md); /* Reduced from lg */
-  background: var(--bg-secondary);
-  border: var(--border-1);
-  box-shadow: var(--shadow-soft);
+  padding: var(--spacing-sm);
 }
 
+/* Remove decorative header text for minimal design */
 header::before {
-  content: "[ root@criptixo:~# Welcome to system access terminal ]";
-  position: absolute;
-  top: -10px; /* Reduced from -12px */
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--bg-main);
-  color: var(--green);
-  padding: 0 var(--spacing-xs); /* Reduced padding */
-  font-size: 0.6rem; /* Reduced from 0.7rem */
-  font-family: 'JetBrains Mono', monospace;
-  white-space: nowrap;
+  display: none;
 }
 
 .brand {
   display: inline-block;
-  margin: var(--spacing-md) 0;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  color: var(--green);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1rem;
+  margin: var(--spacing-sm) 0;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: var(--purple);
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
-  text-shadow: var(--glow-green);
-  background: var(--bg-tertiary);
-  border: var(--border-2);
-  position: relative;
-  letter-spacing: 0.1em;
+  text-shadow: none;
+  background: transparent;
+  border: none;
+  position: static;
+  letter-spacing: normal;
+  text-decoration: none;
 }
 
-.brand::before {
-  content: "[";
-  position: absolute;
-  top: 50%;
-  left: -15px;
-  transform: translateY(-50%);
-  color: var(--cyan);
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
+/* Remove decorative brand brackets for minimal design */
+.brand::before,
 .brand::after {
-  content: "]";
-  position: absolute;
-  top: 50%;
-  right: -15px;
-  transform: translateY(-50%);
-  color: var(--cyan);
-  font-size: 1.2rem;
-  font-weight: bold;
+  display: none;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
+/* ─── Animations removed for Geocities minimal aesthetic ─── */
 
 /* ─── Navigation - Classic tabs ─── */
 .tabs {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-xs); /* Reduced gap */
-  margin: var(--spacing-md) 0; /* Reduced from lg */
+  gap: var(--spacing-sm);
+  margin: var(--spacing-sm) 0;
   flex-wrap: wrap;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .tabs a {
-  color: var(--text-secondary);
+  color: var(--pink);
   text-decoration: none;
-  padding: var(--spacing-xs) var(--spacing-md); /* Reduced padding */
-  background: var(--bg-secondary);
-  border: var(--border-1);
-  transition: var(--transition);
-  font-size: 0.8rem; /* Reduced from 0.9rem */
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: transparent;
+  border: 1px solid var(--pink);
+  transition: none;
+  font-size: 0.9rem;
   position: relative;
+  border-radius: 4px;
 }
 
-.tabs a:hover {
-  color: var(--pink);
-  background: var(--bg-tertiary);
-  border-color: var(--pink);
-  box-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
-}
+/* Hover effects removed for Geocities minimal */
 
 .tabs a.active {
-  color: var(--cyan);
-  background: var(--bg-tertiary);
-  border-color: var(--cyan);
-  box-shadow: var(--glow-cyan);
+  color: var(--black);
+  background: var(--yellow);
+  border-color: var(--yellow);
+  box-shadow: none;
 }
 
+/* Remove decorative star for minimal design */
 .tabs a.active::before {
-  content: "★";
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--yellow);
-  font-size: 0.7rem;
+  display: none;
 }
 
 .nav-icon {
   margin-right: var(--spacing-xs);
-  color: var(--blue);
+  color: var(--pink);
 }
 
-/* ─── Box Styles - Terminal window containers ─── */
+/* ─── Box Styles - Minimal containers ─── */
 .box {
-  background: var(--bg-secondary);
-  border: var(--border-1);
-  padding: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+  background: transparent;
+  border: 1px solid var(--purple);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
   position: relative;
-  box-shadow: var(--shadow-soft);
+  border-radius: 4px;
+  box-shadow: none;
 }
 
 .box::before {
@@ -248,37 +208,60 @@ header::before {
   text-align: center;
   background: var(--bg-main);
   padding: 0 var(--spacing-sm);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .box::after {
-  content: "└────────────────────────────────────────────────────────────────────────────┘";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  right: 0;
-  color: var(--green);
-  font-size: 0.7rem;
-  text-align: center;
-  background: var(--bg-main);
-  padding: 0 var(--spacing-sm);
-  font-family: 'JetBrains Mono', monospace;
+  /* Remove ASCII art border for minimal Geocities style */
+  display: none;
 }
 
-/* ─── Alternating box colors for visual hierarchy ─── */
-.box:nth-child(odd)::before,
-.box:nth-child(odd)::after {
-  color: var(--green);
+/* ─── Mobile Responsive Design ─── */
+@media (max-width: 768px) {
+  body {
+    padding: var(--spacing-xs);
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: var(--spacing-xs);
+  }
+  
+  .brand {
+    font-size: 1.25rem;
+  }
+  
+  .tabs {
+    gap: var(--spacing-xs);
+  }
+  
+  .tabs a {
+    padding: var(--spacing-xs);
+    font-size: 0.8rem;
+  }
+  
+  .box {
+    padding: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+  }
 }
 
-.box:nth-child(even)::before,
-.box:nth-child(even)::after {
-  color: var(--blue);
+@media (max-width: 480px) {
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tabs a {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
 }
 
 .term-title {
   color: var(--green);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
@@ -286,46 +269,40 @@ header::before {
   position: relative;
 }
 
+/* Remove terminal prompt for minimal design */
 .term-title::before {
-  content: "root@criptixo:~# ";
-  color: var(--blue);
-  font-size: 0.8rem;
+  display: none;
 }
 
 .term-title::after {
   content: "";
 }
 
-
-/* ─── Links - Terminal style ─── */
+/* ─── Links - Simple style ─── */
 a {
-  color: var(--cyan);
-  text-decoration: none;
+  color: var(--purple);
+  text-decoration: underline;
   position: relative;
-  transition: var(--transition);
+  transition: none;
 }
 
+/* Remove hover effects and decorative elements for minimal design */
 a:hover {
-  color: var(--green);
-  text-decoration: underline;
-  text-shadow: var(--glow-green);
+  color: var(--yellow);
 }
 
 a::before {
-  content: "> ";
-  color: var(--orange);
-  font-size: 0.7rem;
-  opacity: 0.7;
+  display: none;
 }
 
-/* ─── Content Sections - Clean organization ─── */
+/* ─── Content Sections - Minimal ─── */
 .content-section {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  padding: var(--spacing-md);
-  background: var(--bg-tertiary);
-  border: var(--border-dotted);
+  padding: var(--spacing-sm);
+  background: transparent;
+  border: none;
 }
 
 .content-item {
@@ -349,7 +326,7 @@ a::before {
   min-width: 80px;
   font-weight: normal;
   font-size: 0.8rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .content-label::after {
@@ -380,7 +357,7 @@ a::before {
   color: var(--blue);
   min-width: 60px;
   font-weight: normal;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 /* ─── Snippet Sections - Blog and Gallery previews ─── */
@@ -409,7 +386,7 @@ a::before {
 .snippet-title {
   color: var(--green);
   font-size: 1rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
   margin: 0;
   line-height: 1.3;
   flex: 1;
@@ -419,7 +396,7 @@ a::before {
 .snippet-date {
   color: var(--orange);
   font-size: 0.75rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
   white-space: nowrap;
   background: rgba(255, 135, 0, 0.1);
   padding: 0.2rem 0.4rem;
@@ -432,7 +409,7 @@ a::before {
   font-size: 0.85rem;
   line-height: 1.4;
   margin: 0 0 var(--spacing-sm) 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .snippet-tags {
@@ -449,14 +426,14 @@ a::before {
   border-radius: 3px;
   font-size: 0.7rem;
   border: 1px solid var(--green);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .snippet-link {
   color: var(--cyan);
   text-decoration: none;
   font-size: 0.8rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
   font-weight: bold;
   transition: var(--transition);
   display: inline-block;
@@ -550,7 +527,7 @@ a::before {
   align-items: center;
   gap: var(--spacing-md);
   color: var(--text-secondary);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .footer-left {
@@ -565,7 +542,7 @@ a::before {
   border: 1px solid var(--orange);
   font-size: 0.7rem;
   transition: var(--transition);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .kofi-link:hover {
@@ -629,7 +606,7 @@ a::before {
   line-height: 1.1;
   text-align: center;
   color: var(--green);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .track-info {
@@ -640,21 +617,21 @@ a::before {
   color: var(--cyan);
   font-weight: normal;
   margin-bottom: var(--spacing-xs);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
   font-size: 1rem;
 }
 
 .track-meta {
   color: var(--text-secondary);
   font-size: 0.9em;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .track-timestamp {
   color: var(--blue);
   font-size: 0.8em;
   margin-top: var(--spacing-xs);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .recent-section {
@@ -667,7 +644,7 @@ a::before {
   color: var(--blue);
   margin-bottom: var(--spacing-sm);
   font-size: 0.9em;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 .recent-tracks .row {
@@ -748,7 +725,7 @@ a::before {
   color: var(--green);
   font-weight: normal;
   margin-bottom: 0.5rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 #lastfm-widget .music-header.now-playing {
@@ -780,7 +757,7 @@ a::before {
   flex: 1;
   font-size: 0.9rem;
   line-height: 1.4;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
 }
 
 #lastfm-widget .track-name {
@@ -809,7 +786,7 @@ a::before {
   color: var(--blue);
   text-align: center;
   padding: var(--spacing-md);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: Arial, sans-serif;
   font-style: italic;
 }
 
@@ -2350,18 +2327,9 @@ a::before {
   color: var(--bg-main);
 }
 
-/* ─── Final aesthetic touches ─── */
+/* ─── Remove decorative footer text for minimal design ─── */
 body::after {
-  content: "✧･ﾟ: *✧･ﾟ:* Made with ♡ in 2010 style *:･ﾟ✧*:･ﾟ✧";
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  font-size: 0.6rem;
-  color: var(--text-muted);
-  font-family: 'Comic Neue', sans-serif;
-  z-index: 1000;
-  pointer-events: none;
-  opacity: 0.5;
+  display: none;
 }
 
 /* Print styles */
