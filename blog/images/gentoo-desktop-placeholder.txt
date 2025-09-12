@@ -1,5 +1,5 @@
 # This is a placeholder for the Gentoo desktop screenshot
-# The actual image should be placed at: /home/criptixo/criptixo.me/assets/images/blog/gentoo-desktop.png
+# The actual image should be placed at: /home/criptixo/criptixo.me/blog/images/gentoo-desktop.png
 # 
 # Recommended size: 1200x630 pixels (for social media sharing)
 # Should show: Sway desktop environment running on Gentoo with terminal and workflow
