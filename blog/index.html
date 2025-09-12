@@ -91,15 +91,34 @@
     <section class="main">
       <div class="box term">
         <div class="title term-title">$ cat ~/blog/*</div>
+        
+        <!-- Blog Category Filters -->
+        <div class="blog-filters">
+          <button class="filter-btn active" data-category="all">all</button>
+          <button class="filter-btn" data-category="linux">linux</button>
+          <button class="filter-btn" data-category="hardware">hardware</button>
+          <button class="filter-btn" data-category="tutorials">tutorials</button>
+          <button class="filter-btn" data-category="desktop">desktop</button>
+          <button class="filter-btn" data-category="overclocking">overclocking</button>
+        </div>
+        
         <div class="blog-list">
           
           <!-- Blog posts -->
-          <article class="blog-post">
+          <article class="blog-post" data-category="linux desktop tutorials">
             <div class="post-header">
               <h2><a href="posts/gentoo-linux-desktop-setup.html">Building My Ultimate Gentoo Linux Desktop: A Complete Setup Guide</a></h2>
               <div class="post-meta">
                 <span class="post-date">2025-09-12</span>
-                <span class="post-tags">#gentoo #linux #desktop #luks #lvm #sway #wayland</span>
+                <span class="post-tags">
+                  <span class="tag">gentoo</span>
+                  <span class="tag">linux</span>
+                  <span class="tag">desktop</span>
+                  <span class="tag">luks</span>
+                  <span class="tag">lvm</span>
+                  <span class="tag">sway</span>
+                  <span class="tag">wayland</span>
+                </span>
               </div>
             </div>
             <div class="post-preview">
@@ -113,12 +132,17 @@
             </div>
           </article>
 
-          <article class="blog-post">
+          <article class="blog-post" data-category="hardware overclocking">
             <div class="post-header">
               <h2><a href="posts/overclocking-i7-4770k.html">Overclocking My i7-4770k: A Journey into Performance</a></h2>
               <div class="post-meta">
                 <span class="post-date">2025-09-10</span>
-                <span class="post-tags">#overclocking #hardware #intel #cpu</span>
+                <span class="post-tags">
+                  <span class="tag">overclocking</span>
+                  <span class="tag">hardware</span>
+                  <span class="tag">intel</span>
+                  <span class="tag">cpu</span>
+                </span>
               </div>
             </div>
             <div class="post-preview">
@@ -147,5 +171,6 @@
       </div>
     </footer>
   </div>
+  <script src="../assets/js/blog-filter.js"></script>
 </body>
 </html>

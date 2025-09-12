@@ -18,7 +18,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://criptixo.me/gallery.html" />
+  <meta name="twitter:url" content="https://criptixo.me/gallery/" />
   <meta name="twitter:title" content="Gallery — criptixo" />
   <meta name="twitter:description" content="Collection of ASCII art, terminal screenshots, and minimalist designs by criptixo." />
   <meta name="twitter:image" content="https://criptixo.me/preview.png" />
@@ -46,10 +46,20 @@
     <section class="main">
       <div class="box term">
         <div class="title term-title">$ cat ~/gallery/*</div>
+        
+        <!-- Category filters -->
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-category="all">all</button>
+          <button class="filter-btn" data-category="photography">photography</button>
+          <button class="filter-btn" data-category="screenshots">screenshots</button>
+          <button class="filter-btn" data-category="nature">nature</button>
+          <button class="filter-btn" data-category="urban">urban</button>
+        </div>
+        
         <div class="gallery-grid">
           
           <!-- Gallery images from /assets/images/gallery/ -->
-          <div class="gallery-item">
+          <div class="gallery-item" data-category="photography nature">
             <div class="image-container">
               <a href="../assets/images/gallery/PXL_20250802_185509742.jpg" target="_blank" rel="noopener">
                 <img src="../assets/images/gallery/PXL_20250802_185509742.jpg" alt="Photo from August 2, 2025" loading="lazy" />
@@ -57,6 +67,10 @@
               <div class="image-meta">
                 <span class="image-title">Evening Capture</span>
                 <span class="image-desc">August 2, 2025 at 18:55</span>
+                <div class="image-tags">
+                  <span class="tag">photography</span>
+                  <span class="tag">nature</span>
+                </div>
                 <div class="image-details">
                   <span class="detail-item">📍 Location: Unknown</span>
                   <span class="detail-item">📱 Device: Google Pixel</span>
@@ -65,7 +79,7 @@
             </div>
           </div>
 
-          <div class="gallery-item">
+          <div class="gallery-item" data-category="photography urban">
             <div class="image-container">
               <a href="../assets/images/gallery/PXL_20250802_213952972.jpg" target="_blank" rel="noopener">
                 <img src="../assets/images/gallery/PXL_20250802_213952972.jpg" alt="Photo from August 2, 2025" loading="lazy" />
@@ -73,6 +87,10 @@
               <div class="image-meta">
                 <span class="image-title">Night Shot</span>
                 <span class="image-desc">August 2, 2025 at 21:39</span>
+                <div class="image-tags">
+                  <span class="tag">photography</span>
+                  <span class="tag">urban</span>
+                </div>
                 <div class="image-details">
                   <span class="detail-item">📍 Location: Unknown</span>
                   <span class="detail-item">📱 Device: Google Pixel</span>
@@ -81,14 +99,18 @@
             </div>
           </div>
 
-          <div class="gallery-item">
+          <div class="gallery-item" data-category="photography nature">
             <div class="image-container">
               <a href="../assets/images/gallery/PXL_20250818_160551218.jpg" target="_blank" rel="noopener">
                 <img src="../assets/images/gallery/PXL_20250818_160551218.jpg" alt="Photo from August 18, 2025" loading="lazy" />
               </a>
               <div class="image-meta">
-                <span class="image-title">Afternoon Capture</span>
+                <span class="image-title">Afternoon Light</span>
                 <span class="image-desc">August 18, 2025 at 16:05</span>
+                <div class="image-tags">
+                  <span class="tag">photography</span>
+                  <span class="tag">nature</span>
+                </div>
                 <div class="image-details">
                   <span class="detail-item">📍 Location: Unknown</span>
                   <span class="detail-item">📱 Device: Google Pixel</span>
@@ -110,5 +132,6 @@
       </div>
     </footer>
   </div>
-</body>
+    <script src="../assets/js/gallery-filter.js"></script>
+  </body>
 </html>

@@ -39,9 +39,9 @@
   --glow-subtle: 0 0 8px;
   --transition-smooth: 0.3s ease;
 
-  /* Box styling - consistent across all containers */
+  /* Box styling - minimal design without borders */
   --box-bg: rgba(10, 10, 15, 0.5);
-  --box-border: 1px solid var(--primary);
+  --box-border: none;
   --box-padding: var(--spacing-md);
   --box-margin: var(--spacing-lg);
 
@@ -94,7 +94,6 @@ header {
   text-align: center;
   position: relative;
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--primary);
 }
 
 .brand {
@@ -105,13 +104,7 @@ header {
   text-shadow: none;
   border: var(--box-border);
   background: var(--box-bg);
-  transition: all var(--transition-smooth);
   border-radius: var(--border-radius);
-}
-.brand:hover {
-  background: rgba(0, 212, 255, 0.15);
-  border-color: var(--accent);
-  color: var(--accent);
 }
 
 /* Navigation - Mobile-first responsive design */
@@ -127,28 +120,22 @@ header {
   color: var(--secondary);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border: 1px solid transparent;
-  transition: all var(--transition-smooth);
+  border: none;
   position: relative;
   border-radius: var(--border-radius);
-  background: var(--box-bg);
+  background: transparent;
   min-height: 40px; /* Touch-friendly minimum height */
   display: flex;
   align-items: center;
   justify-content: center;
   touch-action: manipulation; /* Improve touch responsiveness */
-}
-
-.tabs a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: var(--box-bg);
+  opacity: 0.7;
 }
 
 .tabs a.active {
   color: var(--primary);
-  border-color: var(--primary);
   background: var(--box-bg);
+  opacity: 1;
 }
 
 .nav-icon {
@@ -191,12 +178,7 @@ header {
 a {
   color: var(--link);
   text-decoration: none;
-  transition: all var(--transition-smooth);
   position: relative;
-}
-
-a:hover {
-  color: var(--accent);
 }
 
 /* Content Sections - Unified styling for all boxes */
@@ -276,17 +258,10 @@ a:hover {
 .kofi-link {
   color: var(--accent);
   text-decoration: none;
-  transition: color var(--transition-smooth);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   border: 1px solid var(--accent);
   font-size: 0.8rem;
-}
-
-.kofi-link:hover {
-  color: var(--warning);
-  border-color: var(--warning);
-  background: rgba(255, 255, 255, 0.05);
 }
 
 /* Music Section - Mobile-optimized with Last.fm integration */
@@ -422,16 +397,10 @@ a:hover {
 
 .status-playing {
   color: var(--highlight);
-  animation: pulse 2s infinite;
 }
 
 .status-recent {
   color: var(--secondary);
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
 }
 
 #current-track {
@@ -579,7 +548,6 @@ a:hover {
   color: var(--secondary);
   font-style: italic;
   opacity: 0;
-  transition: opacity var(--transition-smooth);
   padding: var(--spacing-xs);
   min-height: 1.2em;
 }
@@ -627,7 +595,7 @@ a:hover {
 }
 
 .send-button {
-  background: var(--secondary);
+  background: var(--primary);
   border: none;
   color: var(--bg);
   padding: var(--spacing-xs) var(--spacing-md);
@@ -635,11 +603,6 @@ a:hover {
   cursor: pointer;
   font-family: inherit;
   font-weight: bold;
-  transition: all var(--transition-smooth);
-}
-
-.send-button:hover {
-  background: var(--accent);
 }
 
 .send-button:active {
@@ -746,18 +709,12 @@ a:hover {
 }
 
 .post-image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border: 1px solid var(--secondary);
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
-}
-
-.post-image a:hover img {
-  transform: scale(1.02);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .image-caption {
@@ -780,12 +737,6 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  transition: all var(--transition-smooth);
-}
-
-.back-link:hover {
-  color: var(--accent);
-  text-shadow: var(--glow-subtle) var(--accent);
 }
 
 .loading-text, .error-text, .no-content {
@@ -1081,9 +1032,8 @@ a:hover {
   .kofi-link {
     font-size: 0.8rem;
   }
-}
 
-.nowplaying {
+  .nowplaying {
     flex-direction: column;
     text-align: center;
     gap: var(--spacing-sm);
@@ -1197,16 +1147,6 @@ a:hover {
   .container {
     max-width: var(--container-width);
   }
-
-  /* Enhance hover effects for larger screens */
-  .brand:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--glow-subtle) var(--primary);
-  }
-
-  .tabs a:hover {
-    transform: translateY(-1px);
-  }
 }
 
 /* High DPI displays */
@@ -1292,15 +1232,8 @@ a:hover {
   border-radius: var(--border-radius);
   overflow: hidden;
   background: var(--box-bg);
-  transition: all var(--transition-smooth);
   position: relative;
   width: 100%;
-}
-
-.gallery-item:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: var(--glow-subtle) var(--accent);
 }
 
 .image-container {
@@ -1313,12 +1246,7 @@ a:hover {
   height: 200px;
   object-fit: cover;
   display: block;
-  transition: transform var(--transition-smooth);
   cursor: pointer;
-}
-
-.gallery-item:hover .image-container img {
-  transform: scale(1.05);
 }
 
 .image-container a {
@@ -1328,7 +1256,198 @@ a:hover {
 
 .image-meta {
   padding: var(--spacing-md);
-  border-top: 1px solid var(--primary);
+}
+
+/* Gallery Filter Styles */
+.gallery-filters {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  color: var(--fg);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.7;
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: var(--glow-subtle) var(--accent);
+  opacity: 1;
+}
+
+.filter-btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Gallery Item States */
+.gallery-item.filtered-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Image Tags Styling */
+.image-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+.tag {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+/* Mobile Responsiveness for Filters */
+@media (max-width: 768px) {
+  .gallery-filters {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    min-height: 2.5rem;
+  }
+  
+  .image-tags {
+    gap: 0.2rem;
+  }
+  
+  .tag {
+    padding: 0.15rem 0.4rem;
+    font-size: 0.65rem;
+  }
+}
+
+/* Blog Filter Styles */
+.blog-filters {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  padding: var(--spacing-md) 0;
+}
+
+.blog-filters .filter-btn {
+  background: transparent;
+  color: var(--fg);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.7;
+}
+
+.blog-filters .filter-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: var(--glow-subtle) var(--accent);
+  opacity: 1;
+}
+
+.blog-filters .filter-btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Blog Post States */
+.blog-post {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blog-post.filtered-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Blog Tags Styling */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.post-tags .tag {
+  background: var(--secondary);
+  color: var(--bg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+/* No Posts Message */
+.no-posts-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--fg);
+  opacity: 0.7;
+  font-style: italic;
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+  background: rgba(var(--primary), 0.05);
+}
+
+.no-posts-message p {
+  margin: 0;
+  color: var(--primary);
+}
+
+/* Mobile Responsiveness for Blog Filters */
+@media (max-width: 768px) {
+  .blog-filters {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: var(--spacing-sm) 0;
+  }
+  
+  .blog-filters .filter-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    min-height: 2.5rem;
+  }
+  
+  .post-tags {
+    gap: 0.2rem;
+  }
+  
+  .post-tags .tag {
+    padding: 0.15rem 0.4rem;
+    font-size: 0.65rem;
+  }
 }
 
 .image-title {
@@ -1579,7 +1698,8 @@ a:hover {
   .image-container img {
     height: 160px;
   }
-}  .image-meta {
+  
+  .image-meta {
     padding: var(--spacing-sm);
   }
   
